@@ -55,9 +55,9 @@ function Paint(){
           <canvas
               ref={canvasRef}
               onMouseEnter={(e) => SetPos(e)}
-              onMouseMove={(e) => SetPos(e)}
+              onMouseMove={(e) => {SetPos(e);Draw(e)}}
               onMouseDown={(e) => SetPos(e)}
-              onMouseMove={(e) => Draw(e)}
+              
           ></canvas>
 
           <div
