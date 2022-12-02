@@ -2,6 +2,10 @@
     position: absolute;
     bottom: 0;
 }
+.startmenu {
+    position: absolute;
+    bottom: 0;
+}
 
 .clock {
     color: white;
