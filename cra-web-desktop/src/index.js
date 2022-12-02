@@ -9,13 +9,16 @@ import DesktopIcon from "./desktop/DesktopIcon";
 import "bootstrap/dist/css/bootstrap.min.css";
 import paintLogo from "./assets/paintLogo.jpg";
 import Taskbar from './Taskbar';
+import Clock from "./apps/clock";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Background>
       <Desktop>
+        
         <Taskbar />
+        <Clock />
         <DesktopIcon src="/vite.svg" appName="Timer" />
         <DesktopIcon src="https://cdn2.iconfinder.com/data/icons/icons-mega-pack-1-and-2/256/Windows_Media_Player_10.png" appName="Music" />
         <DesktopIcon src={paintLogo} appName="Paint" />
