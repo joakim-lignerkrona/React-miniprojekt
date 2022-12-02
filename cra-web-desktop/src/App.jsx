@@ -17,9 +17,9 @@ function App() {
   return (
     <div className="App">
 
-      <Timer></Timer>
+      {/* <Timer></Timer>
 
-      <Calculator></Calculator>
+      <Calculator></Calculator> */}
 
       {/* <Paint></Paint> */}
 
