@@ -19,7 +19,11 @@ export default function Music({videoId}) {
 
   return (
     <Window windowTitle={"Best song.exe"}>
+      <div style={{position: "relative"}}>
+
       <YouTube videoId={videoId} opts={videoOptions} />
+      <div style={{position:"absolute", width: "100%", height: "100%"}}></div>
+      </div>
     </Window>
   );
 }
