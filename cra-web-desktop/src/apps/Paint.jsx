@@ -20,8 +20,6 @@ export default function Paint() {
   }, [canvasRef]);
 
   const SetPos = (e) => {
-    console.log({x: e.pageX + offset.x,
-      y: e.pageY + offset.y,})
     setMouseData({
       x: (e.pageX - offset.x),
       y: (e.pageY - offset.y),
@@ -42,7 +40,6 @@ export default function Paint() {
     // Set the line cap to round
     ctx.lineCap = "round";
     ctx.stroke();
-    console.log(e);
   };
 
   return (
