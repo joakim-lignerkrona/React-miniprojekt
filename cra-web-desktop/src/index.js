@@ -8,7 +8,7 @@ import Desktop from "./Desktop";
 import DesktopIcon from "./desktop/DesktopIcon";
 import "bootstrap/dist/css/bootstrap.min.css";
 import paintLogo from "./assets/paintLogo.jpg";
-import Taskbar from './Taskbar';
+import Taskbar from "./Taskbar";
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
