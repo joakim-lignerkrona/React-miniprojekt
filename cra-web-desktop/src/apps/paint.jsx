@@ -1,5 +1,5 @@
 import { useState, useRef, useEffect } from "react";
-import Window from "./window/Window";
+import Window from "../window/Window";
 
 export default function Paint() {
   const [mouseData, setMouseData] = useState({ x: 0, y: 0 });
@@ -38,6 +38,7 @@ export default function Paint() {
     // Set the line cap to round
     ctx.lineCap = "round";
     ctx.stroke();
+    console.log(e)
   };
 
   return (
