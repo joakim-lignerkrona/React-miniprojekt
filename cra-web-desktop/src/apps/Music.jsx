@@ -3,7 +3,7 @@ import Window from "../window/Window";
 import YouTube from "react-youtube";
 
 
-export default function Music() {
+export default function Music({videoId}) {
 
   const videoOptions = {
     playerVars: {
@@ -12,13 +12,14 @@ export default function Music() {
       rel: 0,
       showinfo: 0,
       mute: 0,
-      loop: 1
+      loop: 1,
+      disablekb: 1
     }
   };
 
   return (
     <Window windowTitle={"Best song.exe"}>
-      <YouTube videoId="dQw4w9WgXcQ" opts={videoOptions} />
+      <YouTube videoId={videoId} opts={videoOptions} />
     </Window>
   );
 }
