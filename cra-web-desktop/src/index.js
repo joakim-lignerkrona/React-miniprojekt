@@ -14,6 +14,9 @@ import Clock from "./apps/clock";
 
 import Music from './apps/Music';
 import { AppProvider } from './contexts/AppsInUseContext';
+import './Calculator.css';
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
@@ -25,7 +28,7 @@ root.render(
         
         <Taskbar />
         <Clock />
-        <DesktopIcon src="/vite.svg" appName="Timer" />
+        <DesktopIcon src="https://winaero.com/blog/wp-content/uploads/2017/01/clock-time-icon.png" appName="Timer" />
         <DesktopIcon src="https://cdn2.iconfinder.com/data/icons/icons-mega-pack-1-and-2/256/Windows_Media_Player_10.png" appName="Music" />
         <DesktopIcon src={paintLogo} appName="Paint" onClick={Music()}/>
       </Desktop>
