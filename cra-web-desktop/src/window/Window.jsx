@@ -18,6 +18,7 @@ export default function Window({ children, windowTitle, setWindowOffset }) {
   }
 
   useEffect(() => {
+    if (setWindowOffset)
     setWindowOffset({x: windowRef.current.offsetLeft,
       y: windowRef.current.offsetTop + windowHeadRef.current.clientHeight,})
     console.log("clicking changed to", clicking);
@@ -57,7 +58,7 @@ export default function Window({ children, windowTitle, setWindowOffset }) {
         
           {/* <h3 className="title-bar-text">{windowTitle}</h3> */}
           <div className="title-bar-text">{windowTitle}</div>
-          <div class="title-bar-controls">
+          <div className="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
             <button aria-label="Close"></button>
