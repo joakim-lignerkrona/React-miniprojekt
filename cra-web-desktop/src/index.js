@@ -10,7 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import paintLogo from "./assets/paintLogo.jpg";
 
 import Taskbar from './Taskbar';
-import Clock from "./apps/clock";
+import Clock from "./apps/Clock";
 
 import Music from './apps/Music';
 import './Calculator.css';
