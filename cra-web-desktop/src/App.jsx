@@ -23,7 +23,7 @@ function App() {
 
       {/* <Paint></Paint> */}
 
-      <Clock />
+      
 
       {/* <Music></Music> */}
 

@@ -13,11 +13,13 @@ import Taskbar from './Taskbar';
 import Clock from "./apps/clock";
 
 import Music from './apps/Music';
+import { AppProvider } from './contexts/AppsInUseContext';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
+    <AppProvider>
     <Background>
       <Desktop>
         
@@ -29,6 +31,7 @@ root.render(
       </Desktop>
       <App />
     </Background>
+    </AppProvider>
   </React.StrictMode>
 );
 
