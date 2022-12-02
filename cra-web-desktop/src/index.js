@@ -36,7 +36,6 @@ root.render(
         <DesktopIcon src="https://cdn2.iconfinder.com/data/icons/icons-mega-pack-1-and-2/256/Windows_Media_Player_10.png" appName="Music" appToStart={<Music videoId={"dQw4w9WgXcQ"}/>}/>
         <DesktopIcon src={paintLogo} appName="Paint" appToStart={<Paint />}/>
         <DesktopIcon src={calcLogo} appName="Calculator" appToStart={<Calculator />}/>
-              <Startmenu/>
 
       </Desktop>
       <App />

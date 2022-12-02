@@ -17,7 +17,6 @@ export default function Taskbar({ children }) {
         className="flex-grow-1"
         style={{ backgroundImage: `url(${middle})` }}
       ></div>
-
       <img src={clock} style={{ height: "100%" }}></img>
     </div>
   );
