@@ -1,4 +1,3 @@
-import { offset } from "@popperjs/core";
 import { useState, useRef, useEffect } from "react";
 import Window from "../window/Window";
 
@@ -8,8 +7,9 @@ export default function Paint() {
   const [canvasCTX, setCanvasCTX] = useState(null);
   const [color, setColor] = useState("#000000");
   const [size, setSize] = useState(10);
-  const [width, setWidth] = useState(1000);
-  const [heigth, setHeigth] = useState(1000);
+  const [width, setWidth] = useState(500);
+  const [heigth, setHeigth] = useState(500);
+  const [offset, setOffset] = useState({});
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,10 +20,11 @@ export default function Paint() {
   }, [canvasRef]);
 
   const SetPos = (e) => {
-    console.log(canvasRef);
+    console.log({x: e.pageX + offset.x,
+      y: e.pageY + offset.y,})
     setMouseData({
-      x: e.pageX + canvasRef.current.offsetTop,
-      y: e.pageY + canvasRef.current.offsetLeft,
+      x: e.pageX + offset.x,
+      y: e.pageY + offset.y,
     });
   };
 
@@ -33,8 +34,8 @@ export default function Paint() {
     ctx.beginPath();
     ctx.moveTo(mouseData.x, mouseData.y);
     ctx.lineTo(
-      e.clientX + canvasRef.current.offsetTop,
-      e.clientY + canvasRef.current.offsetLeft
+      e.clientX + offset.x,
+      e.clientY + offset.y
     );
     ctx.strokeStyle = color;
     ctx.lineWidth = size;
@@ -45,9 +46,10 @@ export default function Paint() {
   };
 
   return (
-    <Window windowTitle={"MS Paint.exe"}>
-      <input type="text" />
-      <button className="btn btn-primary">click</button>
+    <Window windowTitle={"MS Paint.exe"} setWindowOffset={offset => {
+      setOffset(offset)
+    }}>
+      <div className="paint-container">
       <canvas
         ref={canvasRef}
         onMouseEnter={(e) => SetPos(e)}
@@ -62,9 +64,9 @@ export default function Paint() {
         className="controlpanel"
         style={{
           position: "absolute",
-          top: "6%",
+          top: "0",
           left: "0",
-          width: "5%",
+          width: "100%",
         }}
       >
         <input
@@ -96,6 +98,7 @@ export default function Paint() {
         >
           Clear
         </button>
+      </div>
       </div>
     </Window>
   );
