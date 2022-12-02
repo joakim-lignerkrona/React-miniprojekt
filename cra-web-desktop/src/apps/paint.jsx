@@ -1,4 +1,5 @@
 import { useState, useRef, useEffect } from "react";
+import Window from "../window/Window";
 
 export default function Paint() {
   const [mouseData, setMouseData] = useState({ x: 0, y: 0 });
@@ -37,10 +38,11 @@ export default function Paint() {
     // Set the line cap to round
     ctx.lineCap = "round";
     ctx.stroke();
+    console.log(e)
   };
 
   return (
-    <div>
+    <Window>
       <canvas
         ref={canvasRef}
         onMouseEnter={(e) => SetPos(e)}
@@ -89,6 +91,6 @@ export default function Paint() {
           Clear
         </button>
       </div>
-    </div>
+    </Window>
   );
 }

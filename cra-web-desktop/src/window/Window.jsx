@@ -1,7 +1,7 @@
 import React from "react";
 import { useState, useEffect } from "react";
 
-export default function Window({ children }) {
+export default function Window({ children, windowTitle }) {
   const [clicking, setClicking] = useState(false);
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
 
@@ -55,7 +55,7 @@ export default function Window({ children }) {
                 }}
               ></span>
             </div>
-            <h3 className="title">React</h3>
+            <h3 className="title">{windowTitle}</h3>
           </div>
         </div>
       </div>
