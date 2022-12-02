@@ -11,8 +11,11 @@
 }
 .card-header {
   user-select: none;
-  background-color: blue;
+  color: white !important;
+  background-color: #3B77BC !important;
+  
 }
+
 .background {
   position: absolute;
   top: 0;
@@ -33,6 +36,7 @@
   width: 100vw;
 }
 .icon {
+  
   color: white;
   text-shadow: black 0 0 5pt;
   width: 100px;

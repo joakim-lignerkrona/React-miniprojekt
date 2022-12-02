@@ -46,10 +46,11 @@ export default function Paint() {
   };
 
   return (
-    <Window setWindowOffset={offset => {
+    <Window windowTitle={"MS Paint.exe"} setWindowOffset={offset => {
       setOffset(offset)
     }}>
-      <div className="paint-container">
+      <input type="text" />
+      <button className="btn btn-primary">click</button>
       <canvas
         ref={canvasRef}
         onMouseEnter={(e) => SetPos(e)}
@@ -99,7 +100,7 @@ export default function Paint() {
           Clear
         </button>
       </div>
-      </div>
+      
     </Window>
   );
 }

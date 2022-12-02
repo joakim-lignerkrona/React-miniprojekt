@@ -6,7 +6,7 @@ export default function Timer() {
     <Window windowTitle={"Timer.exe"}>
       <h1>Timer</h1>
       <input type="text" />
-      <button className="btn btn-primary">click</button>
+      <button>click</button>
     </Window>
   );
 }

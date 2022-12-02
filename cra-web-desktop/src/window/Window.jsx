@@ -45,7 +45,7 @@ export default function Window({ children, windowTitle, setWindowOffset }) {
       ref={windowRef}
     >
       <div
-        className="card-header"
+        className="title-bar"
         onMouseDown={(e) => {
           setClicking(true);
         }}
@@ -54,24 +54,17 @@ export default function Window({ children, windowTitle, setWindowOffset }) {
         }}
         ref={windowHeadRef}
       >
-        <div className="d-flex justify-content-between">
-          <div className="window-icon">
-            <span
-              style={{
-                backgroundImage: `url(${"https://img.icons8.com/ios/50/000000/react-native.png"})`,
-                height: "100%",
-                width: "100%",
-              }}
-            ></span>
+        
+          {/* <h3 className="title-bar-text">{windowTitle}</h3> */}
+          <div className="title-bar-text">{windowTitle}</div>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
           </div>
-          <h3 className="title flex-grow-1">{windowTitle}</h3>
-          <div className="window-controlls d-flex">
-            <button className="btn btn-">_</button>
-            <button className="btn">X</button>
-          </div>
-        </div>
+        
       </div>
-      <div className="card-body">{children}</div>
+      <div className="window-body">{children}</div>
     </div>
   );
 }
