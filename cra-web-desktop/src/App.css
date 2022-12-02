@@ -1,1 +1,12 @@
-
+.taskbar {
+    position: absolute;
+    bottom: 0;
+}
+.clock {
+    color: white;
+    position: absolute;
+    bottom: 4px;
+    right: 10px;
+    font-size: 14px;
+    
+}
