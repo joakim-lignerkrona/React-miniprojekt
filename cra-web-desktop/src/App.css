@@ -1,1 +1,4 @@
-
+.taskbar {
+    position: absolute;
+    bottom: 0;
+}
