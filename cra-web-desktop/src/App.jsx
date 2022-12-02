@@ -9,7 +9,7 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Timer></Timer> */}
+      <Timer></Timer>
       {/* <Paint></Paint> */}
     </div>
   );
