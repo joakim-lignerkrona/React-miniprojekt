@@ -23,7 +23,6 @@ root.render(
   <React.StrictMode>
     <Background>
       <Desktop>
-        
         <Taskbar />
         <Clock />
         <DesktopIcon src="https://winaero.com/blog/wp-content/uploads/2017/01/clock-time-icon.png" appName="Timer" />
