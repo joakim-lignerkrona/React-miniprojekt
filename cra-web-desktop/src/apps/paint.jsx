@@ -1,3 +1,4 @@
+import { offset } from "@popperjs/core";
 import { useState, useRef, useEffect } from "react";
 import Window from "../window/Window";
 
@@ -7,19 +8,22 @@ export default function Paint() {
   const [canvasCTX, setCanvasCTX] = useState(null);
   const [color, setColor] = useState("#000000");
   const [size, setSize] = useState(10);
+  const [width,setWidth] = useState(1000);
+  const [heigth,setHeigth] = useState(1000);
 
   useEffect(() => {
     const canvas = canvasRef.current;
     const ctx = canvas.getContext("2d");
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    canvas.width = width;
+    canvas.height = heigth;
     setCanvasCTX(ctx);
   }, [canvasRef]);
 
   const SetPos = (e) => {
+    console.log(canvasRef)
     setMouseData({
-      x: e.clientX,
-      y: e.clientY,
+      x: e.pageX + canvasRef.current.offsetTop,
+      y: e.pageY + canvasRef.current.offsetLeft,
     });
   };
 
@@ -27,12 +31,8 @@ export default function Paint() {
     if (e.buttons !== 1) return;
     const ctx = canvasCTX;
     ctx.beginPath();
-    ctx.moveTo(mouseData.x, mouseData.y);
-    setMouseData({
-      x: e.clientX,
-      y: e.clientY,
-    });
-    ctx.lineTo(e.clientX, e.clientY);
+    ctx.moveTo(mouseData.x , mouseData.y);
+    ctx.lineTo(e.clientX + canvasRef.current.offsetTop, e.clientY + canvasRef.current.offsetLeft);
     ctx.strokeStyle = color;
     ctx.lineWidth = size;
     // Set the line cap to round
@@ -57,9 +57,9 @@ export default function Paint() {
         className="controlpanel"
         style={{
           position: "absolute",
-          top: "0",
+          top: "3%",
           left: "0",
-          width: "100%",
+          width: "5%",
         }}
       >
         <input
@@ -70,6 +70,7 @@ export default function Paint() {
             setSize(e.target.value);
           }}
         />
+
         <input
           type="color"
           value={color}
