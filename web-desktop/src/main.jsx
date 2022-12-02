@@ -13,7 +13,7 @@ ReactDOM.createRoot(document.getElementById("root")).render(
       <Desktop>
         <DesktopIcon src="/vite.svg" appName="Timer" />
         <DesktopIcon src="/vite.svg" appName="ToDo" />
-        <DesktopIcon src="/vite.svg" appName="Paint" />
+        <DesktopIcon src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Microsoft_Paint.svg" appName="Paint" />
       </Desktop>
       <App />
     </Background>
