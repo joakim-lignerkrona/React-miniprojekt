@@ -10,6 +10,7 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import paintLogo from "./assets/paintLogo.jpg";
 import Taskbar from "./Taskbar";
 import Music from './apps/Music';
+import './Calculator.css';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
