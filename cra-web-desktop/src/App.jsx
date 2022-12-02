@@ -3,16 +3,31 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Paint from "./apps/Paint";
 import Timer from "./apps/Timer";
+import Clock from "./apps/clock";
+
+import Calculator from "./apps/Calculator";
+
+
 import Music from "./apps/Music";
+
 
 function App() {
   const [count, setCount] = useState(0);
 
   return (
     <div className="App">
-      {/* <Timer></Timer> */}
-      <Paint></Paint>      
+
+      <Timer></Timer>
+
+      <Calculator></Calculator>
+
+      {/* <Paint></Paint> */}
+
+      <Clock />
+
       {/* <Music></Music> */}
+
+
     </div>
   );
 }
