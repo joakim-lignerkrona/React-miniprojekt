@@ -3,7 +3,7 @@ import React, { Component } from "react";
 class KeyPadComponent extends Component {
   render() {
     return (
-      <div className="button">
+      <div className=" calculator-keypad">
         <button name="(" onClick={(e) => this.props.onClick(e.target.name)}>
           (
         </button>
