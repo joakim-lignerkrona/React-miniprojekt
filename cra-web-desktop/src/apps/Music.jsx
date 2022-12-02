@@ -3,7 +3,7 @@ import Window from "../window/Window";
 import YouTube from "react-youtube";
 
 
-export default function Timer() {
+export default function Music() {
 
   const videoOptions = {
     playerVars: {
