@@ -11,7 +11,9 @@
 }
 .card-header {
   user-select: none;
+  background-color: #00AA9E;
 }
+
 .background {
   position: absolute;
   top: 0;
