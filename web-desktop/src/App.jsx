@@ -1,15 +1,18 @@
+
 import {  useEffect, useRef, useState  } from 'react'
-import reactLogo from './assets/react.svg'
-import './App.css'
+import reactLogo from "./assets/react.svg";
+import "./App.css";
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
 
   return (
     <div className="App">
+
     </div>
-  )
+  );
 }
+
 
 function Paint(){
   const [mouseData, setMouseData] = useState({ x: 0, y: 0 });
