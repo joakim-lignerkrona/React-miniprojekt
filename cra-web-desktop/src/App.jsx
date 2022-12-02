@@ -17,16 +17,16 @@ function App() {
   return (
     <div className="App">
 
-      {/* <Timer></Timer>
+      <Timer></Timer>
 
-      <Calculator></Calculator> */}
+      <Calculator></Calculator>
 
       {/* <Paint></Paint> */}
 
 
     
 
-      <Music videoId={"dQw4w9WgXcQ"}></Music>
+      {/* <Music videoId={"dQw4w9WgXcQ"}></Music> */}
 
 
 

@@ -1,6 +1,6 @@
 import Window from "../window/Window";
 import React, { useState, useEffect } from "react";
-
+import Music from "./Music";
 
 export default function Timer() {
   const [time, setTime] = useState(10);
@@ -24,7 +24,7 @@ export default function Timer() {
     return (
       <Window windowTitle={"Timer.exe"}>
         { isCool && <h1>{time}</h1>}
-        { isCool || <div>Nu är tiden slut</div>}
+        { isCool || <div>Nu är tiden slut<Music videoId={"d4RJUGJ4gXc"}></Music></div>}
         <form>
         <input type="number" value={timeInput} onChange={e => {setTimeInput(e.target.value)}}/>
         <button onClick={e => {ActiveTimer(e)}}>click</button>
