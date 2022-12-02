@@ -4,7 +4,7 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 import Background from "./Background";
-import Desktop from "./desktop";
+import Desktop from "./Desktop";
 import DesktopIcon from "./desktop/DesktopIcon";
 import "bootstrap/dist/css/bootstrap.min.css";
 
