@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { useEffect, useRef, useState, useContext } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Paint from "./apps/Paint";
@@ -9,27 +9,17 @@ import Calculator from "./apps/Calculator";
 
 
 import Music from "./apps/Music";
+import { AppsInUseContext } from "./contexts/AppsInUseContext";
 
 
 function App() {
   const [count, setCount] = useState(0);
 
+  const {apps} = useContext(AppsInUseContext);
+
   return (
     <div className="App">
-
-      <Timer></Timer>
-
-      <Calculator></Calculator>
-
-      {/* <Paint></Paint> */}
-
-
-    
-
-      {/* <Music videoId={"dQw4w9WgXcQ"}></Music> */}
-
-
-
+      {apps}
     </div>
   );
 }
