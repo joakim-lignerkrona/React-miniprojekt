@@ -10,11 +10,13 @@ import "bootstrap/dist/css/bootstrap.min.css";
 import paintLogo from "./assets/paintLogo.jpg";
 
 import Taskbar from './Taskbar';
-import Clock from "./apps/clock";
+import Clock from "./apps/Clock";
 
 import Music from './apps/Music';
 import { AppProvider } from './contexts/AppsInUseContext';
 import './Calculator.css';
+import Timer from './apps/Timer';
+import Paint from './apps/Paint';
 
 
 
@@ -28,9 +30,9 @@ root.render(
         
         <Taskbar />
         <Clock />
-        <DesktopIcon src="https://winaero.com/blog/wp-content/uploads/2017/01/clock-time-icon.png" appName="Timer" />
-        <DesktopIcon src="https://cdn2.iconfinder.com/data/icons/icons-mega-pack-1-and-2/256/Windows_Media_Player_10.png" appName="Music" />
-        <DesktopIcon src={paintLogo} appName="Paint" onClick={Music()}/>
+        <DesktopIcon src="https://winaero.com/blog/wp-content/uploads/2017/01/clock-time-icon.png" appName="Timer" appToStart={<Timer/>} />
+        <DesktopIcon src="https://cdn2.iconfinder.com/data/icons/icons-mega-pack-1-and-2/256/Windows_Media_Player_10.png" appName="Music" appToStart={<Music />}/>
+        <DesktopIcon src={paintLogo} appName="Paint" appToStart={<Paint />}/>
       </Desktop>
       <App />
     </Background>

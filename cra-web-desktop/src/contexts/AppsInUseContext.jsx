@@ -1,11 +1,13 @@
 import React from 'react'
+import {v4 as uuid} from 'uuid'
 
-const AppsInUseContext = React.createContext()
+export const AppsInUseContext = React.createContext()
 
 export function AppProvider({children}) {
     const [appsInUse, setAppsInUse] = React.useState([])
-    function startApp(appName) {
-        setAppsInUse([...appsInUse, appName])
+    function startApp(appComponent) {
+        const id = uuid()
+        setAppsInUse([...appsInUse, <div id={id} key={id}>{appComponent}</div>])
     }
 
 
