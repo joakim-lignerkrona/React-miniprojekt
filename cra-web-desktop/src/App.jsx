@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import Paint from "./apps/Paint";
+import Paint from "./apps/paint";
 import Timer from "./apps/Timer";
 import Clock from "./apps/clock";
 
