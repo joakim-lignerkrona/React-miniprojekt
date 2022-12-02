@@ -5,6 +5,8 @@ export default function Timer() {
   return (
     <Window windowTitle={"Timer.exe"}>
       <h1>Timer</h1>
+      <input type="text" />
+      <button>click</button>
     </Window>
   );
 }
