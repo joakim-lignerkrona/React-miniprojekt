@@ -8,6 +8,7 @@ import Desktop from "./Desktop";
 import DesktopIcon from "./desktop/DesktopIcon";
 import "bootstrap/dist/css/bootstrap.min.css";
 import paintLogo from "./assets/paintLogo.jpg";
+import calcLogo from "./assets/calcLogo.png";
 
 import Taskbar from './Taskbar';
 import Clock from "./apps/Clock";
@@ -17,6 +18,7 @@ import { AppProvider } from './contexts/AppsInUseContext';
 import './Calculator.css';
 import Timer from './apps/Timer';
 import Paint from './apps/Paint';
+import Calculator from './apps/Calculator';
 import Startmenu from './desktop/Start-menu';
 
 
@@ -33,7 +35,7 @@ root.render(
         <DesktopIcon src="https://winaero.com/blog/wp-content/uploads/2017/01/clock-time-icon.png" appName="Timer" appToStart={<Timer/>} />
         <DesktopIcon src="https://cdn2.iconfinder.com/data/icons/icons-mega-pack-1-and-2/256/Windows_Media_Player_10.png" appName="Music" appToStart={<Music videoId={"dQw4w9WgXcQ"}/>}/>
         <DesktopIcon src={paintLogo} appName="Paint" appToStart={<Paint />}/>
-        <Startmenu />
+
       </Desktop>
       <App />
     </Background>

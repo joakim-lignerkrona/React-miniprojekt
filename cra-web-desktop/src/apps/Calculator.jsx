@@ -6,12 +6,12 @@ import KeyPadComponent from "./components calc/KeyPadComponent";
 export default class Calculator extends Component {
   constructor() {
     super();
-    
+
     this.state = {
       result: "",
     };
   }
-  
+
   onClick = (button) => {
     if (button === "=") {
       this.calculate();
@@ -25,7 +25,7 @@ export default class Calculator extends Component {
       });
     }
   };
-  
+
   calculate = () => {
     var checkResult = "";
     if (this.state.result.includes("--")) {
@@ -33,7 +33,7 @@ export default class Calculator extends Component {
     } else {
       checkResult = this.state.result;
     }
-    
+
     try {
       this.setState({
         // eslint-disable-next-line
@@ -45,19 +45,19 @@ export default class Calculator extends Component {
       });
     }
   };
-  
+
   reset = () => {
     this.setState({
       result: "",
     });
   };
-  
+
   backspace = () => {
     this.setState({
       result: this.state.result.slice(0, -1),
     });
   };
-  
+
   render() {
     return (
       <Window windowTitle={"Calculator.exe"}>
@@ -72,10 +72,9 @@ export default class Calculator extends Component {
 }
 
 function Calculator1() {
-return (
-  <Window windowTitle={"Calculator.exe"}>
+  return (
+    <Window windowTitle={"Calculator.exe"}>
       <h1>Calculator</h1>
     </Window>
   );
 }
-
