@@ -8,8 +8,8 @@ export default function Paint() {
   const [canvasCTX, setCanvasCTX] = useState(null);
   const [color, setColor] = useState("#000000");
   const [size, setSize] = useState(10);
-  const [width,setWidth] = useState(1000);
-  const [heigth,setHeigth] = useState(1000);
+  const [width, setWidth] = useState(1000);
+  const [heigth, setHeigth] = useState(1000);
 
   useEffect(() => {
     const canvas = canvasRef.current;
@@ -20,7 +20,7 @@ export default function Paint() {
   }, [canvasRef]);
 
   const SetPos = (e) => {
-    console.log(canvasRef)
+    console.log(canvasRef);
     setMouseData({
       x: e.pageX + canvasRef.current.offsetTop,
       y: e.pageY + canvasRef.current.offsetLeft,
@@ -31,18 +31,23 @@ export default function Paint() {
     if (e.buttons !== 1) return;
     const ctx = canvasCTX;
     ctx.beginPath();
-    ctx.moveTo(mouseData.x , mouseData.y);
-    ctx.lineTo(e.clientX + canvasRef.current.offsetTop, e.clientY + canvasRef.current.offsetLeft);
+    ctx.moveTo(mouseData.x, mouseData.y);
+    ctx.lineTo(
+      e.clientX + canvasRef.current.offsetTop,
+      e.clientY + canvasRef.current.offsetLeft
+    );
     ctx.strokeStyle = color;
     ctx.lineWidth = size;
     // Set the line cap to round
     ctx.lineCap = "round";
     ctx.stroke();
-    console.log(e)
+    console.log(e);
   };
 
   return (
-    <Window>
+    <Window windowTitle={"MS Paint.exe"}>
+      <input type="text" />
+      <button className="btn btn-primary">click</button>
       <canvas
         ref={canvasRef}
         onMouseEnter={(e) => SetPos(e)}
@@ -57,7 +62,7 @@ export default function Paint() {
         className="controlpanel"
         style={{
           position: "absolute",
-          top: "3%",
+          top: "6%",
           left: "0",
           width: "5%",
         }}
