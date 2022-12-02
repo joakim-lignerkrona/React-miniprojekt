@@ -13,6 +13,9 @@ import Taskbar from './Taskbar';
 import Clock from "./apps/clock";
 
 import Music from './apps/Music';
+import './Calculator.css';
+
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
