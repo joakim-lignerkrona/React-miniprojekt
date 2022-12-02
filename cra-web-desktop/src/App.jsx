@@ -1,7 +1,7 @@
 import { useEffect, useRef, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import "./App.css";
-import Paint from "./apps/paint";
+import Paint from "./apps/Paint";
 import Timer from "./apps/Timer";
 
 function App() {
@@ -9,9 +9,8 @@ function App() {
 
   return (
     <div className="App">
-      <Timer></Timer>
-      {/* <Paint></Paint> */}
-
+      {/* <Timer></Timer> */}
+      <Paint></Paint>
     </div>
   );
 }

@@ -11,6 +11,7 @@
 }
 .card-header {
   user-select: none;
+  background-color: blue;
 }
 .background {
   position: absolute;
@@ -57,4 +58,7 @@
   max-height: 65px;
   width: 100%;
   height: 100%;
+}
+.paint-container{
+  position: relative;
 }
