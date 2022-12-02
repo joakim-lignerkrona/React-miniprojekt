@@ -62,7 +62,7 @@ export default class Calculator extends Component {
     return (
       <Window windowTitle={"Calculator.exe"}>
         <div className="calculator-body">
-          <h1>Simple Calculator</h1>
+          <br />
           <ResultComponent result={this.state.result} />
           <KeyPadComponent onClick={this.onClick} />
         </div>
