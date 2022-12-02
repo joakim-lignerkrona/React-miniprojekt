@@ -10,11 +10,12 @@ function App() {
 
   return (
     <div className="App">
-      {/* <Timer></Timer> */}
+      <Timer></Timer>
       {/* <Paint></Paint> */}
-      <Music></Music>
+      {/* <Music></Music> */}
     </div>
   );
 }
+
 
 export default App;

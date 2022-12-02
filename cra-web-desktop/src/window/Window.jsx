@@ -36,7 +36,7 @@ export default function Window({ children, windowTitle }) {
       style={{ top: mousePosition.y, left: mousePosition.x }}
     >
       <div
-        className="card-header"
+        className="title-bar"
         onMouseDown={(e) => {
           setClicking(true);
         }}
@@ -54,14 +54,15 @@ export default function Window({ children, windowTitle }) {
               }}
             ></span>
           </div>
-          <h3 className="title flex-grow-1">{windowTitle}</h3>
-          <div className="window-controlls d-flex">
-            <button className="btn btn-">_</button>
-            <button className="btn">X</button>
+          {/* <h3 className="title-bar-text">{windowTitle}</h3> */}
+          <div className="title-bar-text">{windowTitle}</div>
+          <div className="titlebar-controls">
+            <button >_</button>
+            <button >X</button>
           </div>
         </div>
       </div>
-      <div className="card-body">{children}</div>
+      <div className="window-body">{children}</div>
     </div>
   );
 }
