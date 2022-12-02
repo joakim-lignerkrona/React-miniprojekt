@@ -7,12 +7,14 @@ import Background from "./Background";
 import Desktop from "./Desktop";
 import DesktopIcon from "./desktop/DesktopIcon";
 import "bootstrap/dist/css/bootstrap.min.css";
+import Taskbar from './Taskbar';
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <Background>
       <Desktop>
+        <Taskbar />
         <DesktopIcon src="/vite.svg" appName="Timer" />
         <DesktopIcon src="/vite.svg" appName="ToDo" />
         <DesktopIcon src="https://upload.wikimedia.org/wikipedia/commons/2/2b/Microsoft_Paint.svg" appName="Paint" />
