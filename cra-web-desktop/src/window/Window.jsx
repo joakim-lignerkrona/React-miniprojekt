@@ -44,23 +44,15 @@ export default function Window({ children, windowTitle }) {
           setClicking(false);
         }}
       >
-        <div className="d-flex justify-content-between">
-          <div className="window-icon">
-            <span
-              style={{
-                backgroundImage: `url(${"https://img.icons8.com/ios/50/000000/react-native.png"})`,
-                height: "100%",
-                width: "100%",
-              }}
-            ></span>
-          </div>
+        
           {/* <h3 className="title-bar-text">{windowTitle}</h3> */}
           <div className="title-bar-text">{windowTitle}</div>
-          <div className="titlebar-controls">
-            <button >_</button>
-            <button >X</button>
+          <div class="title-bar-controls">
+            <button aria-label="Minimize"></button>
+            <button aria-label="Maximize"></button>
+            <button aria-label="Close"></button>
           </div>
-        </div>
+        
       </div>
       <div className="window-body">{children}</div>
     </div>
