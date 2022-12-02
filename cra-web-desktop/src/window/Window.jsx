@@ -56,8 +56,8 @@ export default function Window({ children, windowTitle }) {
           </div>
           <h3 className="title flex-grow-1">{windowTitle}</h3>
           <div className="window-controlls d-flex">
-            <button>_</button>
-            <button>X</button>
+            <button className="btn btn-">_</button>
+            <button className="btn">X</button>
           </div>
         </div>
       </div>
