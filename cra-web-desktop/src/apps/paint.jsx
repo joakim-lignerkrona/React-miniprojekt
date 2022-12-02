@@ -38,6 +38,7 @@ export default function Paint() {
     // Set the line cap to round
     ctx.lineCap = "round";
     ctx.stroke();
+    console.log(e)
   };
 
   return (

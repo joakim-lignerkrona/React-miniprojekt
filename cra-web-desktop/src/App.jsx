@@ -10,7 +10,7 @@ function App() {
   return (
     <div className="App">
       {/* <Timer></Timer> */}
-      <Paint></Paint>
+      {/* <Paint></Paint> */}
     </div>
   );
 }
