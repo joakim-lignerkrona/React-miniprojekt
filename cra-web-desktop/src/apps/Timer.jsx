@@ -1,9 +1,10 @@
 import Window from "../window/Window";
 import React, { useState, useEffect } from "react";
 import YouTube from "react-youtube";
+import alarm from "../assets/alarm.mp3";
 
 export default function Timer() {
-  const [time, setTime] = useState(10);
+  const [time, setTime] = useState(null);
   const [timeInput, setTimeInput] = useState(0);
   const [isCool, setIsCool] = useState(true)
   const videoOptions = {
@@ -23,11 +24,12 @@ export default function Timer() {
     setTime(timeInput)
   }
   useEffect(() => {
-    const interval = setInterval(() => {
+    const interval = time? setInterval(() => {
       if(time <=0) 
       setIsCool(false);
+      else setIsCool(true);
       setTime(time-0.01);
-        }, 10);
+        }, 10):null
       return () => clearInterval(interval);
     }, [time]);
 
@@ -35,7 +37,7 @@ export default function Timer() {
     return (
       <Window windowTitle={"Timer.exe"}>
         { isCool && <h1>{Math.round(time * 100) / 100}</h1>}
-        { isCool || <div>Nu är tiden slut<YouTube videoId={"d4RJUGJ4gXc"} opts={videoOptions} /></div>}
+        { isCool || <h2>Nu är tiden slut...<audio src={alarm} autoPlay loop controls /></h2>}
         <form>
         <input type="number" value={timeInput} onChange={e => {setTimeInput(e.target.value)}}/>
         <button onClick={e => {ActiveTimer(e)}}>click</button>
