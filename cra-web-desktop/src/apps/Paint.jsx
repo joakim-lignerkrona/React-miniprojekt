@@ -23,8 +23,8 @@ export default function Paint() {
     console.log({x: e.pageX + offset.x,
       y: e.pageY + offset.y,})
     setMouseData({
-      x: e.pageX + offset.x,
-      y: e.pageY + offset.y,
+      x: (e.pageX - offset.x),
+      y: (e.pageY - offset.y),
     });
   };
 
@@ -32,10 +32,10 @@ export default function Paint() {
     if (e.buttons !== 1) return;
     const ctx = canvasCTX;
     ctx.beginPath();
-    ctx.moveTo(mouseData.x, mouseData.y);
+    ctx.moveTo(mouseData.x , mouseData.y );
     ctx.lineTo(
-      e.clientX + offset.x,
-      e.clientY + offset.y
+      (e.clientX - offset.x),
+      (e.clientY - offset.y)
     );
     ctx.strokeStyle = color;
     ctx.lineWidth = size;
