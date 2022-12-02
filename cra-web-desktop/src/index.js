@@ -20,7 +20,6 @@ root.render(
   <React.StrictMode>
     <Background>
       <Desktop>
-        
         <Taskbar />
         <Clock />
         <DesktopIcon src="/vite.svg" appName="Timer" />
