@@ -3,7 +3,7 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Paint from "./apps/Paint";
 import Timer from "./apps/Timer";
-import Clock from "./apps/clock";
+import Clock from "./apps/Clock";
 
 import Calculator from "./apps/Calculator";
 
