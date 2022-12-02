@@ -3,6 +3,8 @@ import reactLogo from "./assets/react.svg";
 import "./App.css";
 import Paint from "./paint";
 import Timer from "./apps/Timer";
+import Calculator from "./apps/Calculator";
+
 
 function App() {
   const [count, setCount] = useState(0);
@@ -10,6 +12,7 @@ function App() {
   return (
     <div className="App">
       <Timer></Timer>
+      <Calculator></Calculator>
     </div>
   );
 }
