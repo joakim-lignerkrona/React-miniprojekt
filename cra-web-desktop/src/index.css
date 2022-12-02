@@ -6,7 +6,7 @@
   position: absolute;
   top: 0;
   left: 0;
-
+  pointer-events: none;
   z-index: 0;
 }
 .card-header {
@@ -43,6 +43,11 @@
   height: 100px;
   margin: 10px;
   border-radius: 10px;
+}
+.window.card{
+  pointer-events: all;
+  width: fit-content;
+  height: fit-content;
 }
 .window-icon {
   max-width: 30px;
