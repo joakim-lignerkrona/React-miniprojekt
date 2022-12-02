@@ -26,15 +26,15 @@ export default function Timer() {
     const interval = setInterval(() => {
       if(time <=0) 
       setIsCool(false);
-      setTime(time-1);
-        }, 1000);
+      setTime(time-0.01);
+        }, 10);
       return () => clearInterval(interval);
     }, [time]);
 
     
     return (
       <Window windowTitle={"Timer.exe"}>
-        { isCool && <h1>{time}</h1>}
+        { isCool && <h1>{Math.round(time * 100) / 100}</h1>}
         { isCool || <div>Nu är tiden slut<YouTube videoId={"d4RJUGJ4gXc"} opts={videoOptions} /></div>}
         <form>
         <input type="number" value={timeInput} onChange={e => {setTimeInput(e.target.value)}}/>
