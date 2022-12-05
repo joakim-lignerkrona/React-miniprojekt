@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import Window from "../window/Window";
 import React, { useState, useEffect } from "react";
 import YouTube from "react-youtube";

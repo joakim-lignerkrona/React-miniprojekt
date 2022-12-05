@@ -1,12 +1,15 @@
 import React from "react";
 import { useRef } from "react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useContext } from "react";
+import { AppsInUseContext } from "../contexts/AppsInUseContext";
 
-export default function Window({ children, windowTitle, setWindowOffset }) {
+export default function Window({ children, windowTitle, setWindowOffset, id, position }) {
   const [clicking, setClicking] = useState(false);
+  const [windowID, setWindowID] = useState()
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const windowRef = useRef()
   const windowHeadRef = useRef()   
+  const {getIDForNewWindow, closeApp: close} = useContext(AppsInUseContext)
 
   function handleMouseMove(e) {
     setMousePosition((pos) => {
@@ -17,27 +20,50 @@ export default function Window({ children, windowTitle, setWindowOffset }) {
       y: windowRef.current.offsetTop + windowHeadRef.current.clientHeight,})
   }
 
+  function handleMouseUp() {
+
+      console.log("mouseup");
+      setClicking(false);
+    
+  }
+
+  useEffect(() => {
+    let intervall
+    if (!windowID) {
+    intervall = setInterval(() => {
+      let id = getIDForNewWindow()
+      if (id) {
+        setWindowID(id)
+        clearInterval(intervall)
+      }
+    }, 10)}
+    else {
+      clearInterval(intervall)
+    }
+  })
+
   useEffect(() => {
     if (setWindowOffset)
     setWindowOffset({x: windowRef.current.offsetLeft,
       y: windowRef.current.offsetTop + windowHeadRef.current.clientHeight,})
-    console.log("clicking changed to", clicking);
     if (clicking) {
-      window.addEventListener("mouseup", (e) => {
-        console.log("mouseup");
-        setClicking(false);
-      });
+      window.addEventListener("mouseup", handleMouseUp);
       window.addEventListener("mousemove", handleMouseMove);
     } else {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", null);
+      window.removeEventListener("mouseup", handleMouseUp);
     }
 
     return () => {
       window.removeEventListener("mousemove", handleMouseMove);
-      window.removeEventListener("mouseup", null);
+      window.removeEventListener("mouseup", handleMouseUp);
     };
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [clicking]);
+  useEffect(() => {
+    if (position)
+    setMousePosition(position)
+  },[position])
 
   return (
     <div
@@ -61,7 +87,7 @@ export default function Window({ children, windowTitle, setWindowOffset }) {
           <div className="title-bar-controls">
             <button aria-label="Minimize"></button>
             <button aria-label="Maximize"></button>
-            <button aria-label="Close"></button>
+            <button aria-label="Close" onClick={() => {close(windowID)}}></button>
           </div>
         
       </div>

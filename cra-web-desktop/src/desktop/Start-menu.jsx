@@ -1,6 +1,5 @@
 import React from "react"
 import startmenu from "../assets/start-menu.png"
-import startbutton from "../assets/startclicked.png"
 
 export default function Startmenu({ onClick }) {
     return (

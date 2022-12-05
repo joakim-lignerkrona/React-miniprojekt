@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import { useState, useRef, useEffect } from "react";
 import Window from "../window/Window";
 
@@ -17,7 +18,7 @@ export default function Paint() {
     canvas.width = width;
     canvas.height = heigth;
     setCanvasCTX(ctx);
-  }, [canvasRef]);
+  }, [canvasRef, heigth, width]);
 
   const SetPos = (e) => {
     setMouseData({

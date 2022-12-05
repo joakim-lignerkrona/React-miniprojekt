@@ -7,12 +7,25 @@ export function AppProvider({children}) {
     const [appsInUse, setAppsInUse] = React.useState([])
     function startApp(appComponent) {
         const id = uuid()
-        setAppsInUse([...appsInUse, <div id={id} key={id}>{appComponent}</div>])
+        setAppsInUse([...appsInUse, {component: <div id={id} style={{position: "absolute", top: 150, left: 150}} key={id}>{appComponent}</div>, id, window: null}])
+    }
+    function closeApp(id) {
+        setAppsInUse(appsInUse.filter(app => app.id !== id))
+    }
+    function getIDForNewWindow() {
+        let app = appsInUse.filter(app => {
+            if (!app.window) {
+                app.window = uuid()
+                return true
+            }
+            return false
+        })
+        return app[0]?.id
     }
 
 
   return (
-    <AppsInUseContext.Provider value={{apps: appsInUse, startApp}}>
+    <AppsInUseContext.Provider value={{apps: appsInUse.map(a => {return a.component}), startApp, getIDForNewWindow, closeApp}}>
         {children}
     </AppsInUseContext.Provider>
   )

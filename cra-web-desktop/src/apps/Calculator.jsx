@@ -71,10 +71,10 @@ export default class Calculator extends Component {
   }
 }
 
-function Calculator1() {
+/* function Calculator1() {
   return (
     <Window windowTitle={"Calculator.exe"}>
       <h1>Calculator</h1>
     </Window>
   );
-}
+} */

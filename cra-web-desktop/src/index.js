@@ -19,7 +19,6 @@ import './Calculator.css';
 import Timer from './apps/Timer';
 import Paint from './apps/Paint';
 import Calculator from './apps/Calculator';
-import Startmenu from './desktop/Start-menu';
 
 
 
