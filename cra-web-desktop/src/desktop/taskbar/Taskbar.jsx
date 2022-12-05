@@ -1,8 +1,8 @@
 import React, {useState} from "react";
-import start from "./assets/start.png";
-import middle from "./assets/taskbar.middle.png";
-import clock from "./assets/clock.png";
-import Startmenu from "./desktop/Start-menu";
+import start from "../../assets/start.png";
+import middle from "../../assets/taskbar.middle.png";
+import clock from "../../assets/clock.png";
+import Startmenu from "./Start-menu";
 
 export default function Taskbar({ children }) {
   const [showStart, setShowStart] = useState(false);

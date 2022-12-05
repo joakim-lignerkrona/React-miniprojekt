@@ -7,7 +7,7 @@ export function AppProvider({children}) {
     const [appsInUse, setAppsInUse] = React.useState([])
     function startApp(appComponent) {
         const id = uuid()
-        setAppsInUse([...appsInUse, {component: <div id={id} style={{position: "absolute", top: 150, left: 150}} key={id}>{appComponent}</div>, id, window: null}])
+        setAppsInUse([...appsInUse, {component: <div id={id} style={{position: "absolute"}} key={id}>{appComponent}</div>, id, window: null}])
     }
     function closeApp(id) {
         setAppsInUse(appsInUse.filter(app => app.id !== id))

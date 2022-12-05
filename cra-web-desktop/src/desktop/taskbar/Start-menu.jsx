@@ -1,5 +1,5 @@
 import React from "react"
-import startmenu from "../assets/start-menu.png"
+import startmenu from "../../assets/start-menu.png"
 
 export default function Startmenu({ onClick }) {
     return (
